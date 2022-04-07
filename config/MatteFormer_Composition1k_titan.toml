@@ -1,0 +1,52 @@
+version = "MatteFormer-Composition1k"
+dist = true
+
+[model]
+trimap_channel = 3
+mask_channel = 1
+batch_size = 10
+imagenet_pretrain = true
+imagenet_pretrain_path = "pretrained/swin_tiny_patch4_window7_224.pth"
+self_refine_width1 = 30
+self_refine_width2 = 15
+
+[train]
+total_step = 200000
+warmup_step = 10000
+
+val_step = 5000
+
+clip_grad = true
+G_lr = 1e-3
+rec_weight = 1.0
+comp_weight = 1.0
+lap_weight = 1.0
+
+
+[data]
+train_fg = "/PATH/Adobe_Deep_Matting_Dataset/Combined_Dataset/Training_set/Adobe-licensed images/fg"
+train_alpha = "/PATH/Adobe_Deep_Matting_Dataset/Combined_Dataset/Training_set/Adobe-licensed images/alpha"
+train_bg = "/PATH/COCO/train2014"
+
+test_merged = "/PATH/Adobe_Deep_Matting_Dataset/Combined_Dataset/Test_set/Adobe-licensed images/merged"
+test_alpha = "/PATH/Adobe_Deep_Matting_Dataset/Combined_Dataset/Test_set/Adobe-licensed images/alpha_copy"
+test_trimap = "/PATH/Adobe_Deep_Matting_Dataset/Combined_Dataset/Test_set/Adobe-licensed images/trimaps"
+
+workers = 4
+
+crop_size = 512
+
+cutmask_prob = 0.25
+augmentation = true
+random_interp = true
+real_world_aug = false
+
+[log]
+experiment_root = "experiments"
+
+logging_path = "logs/stdout"
+logging_step =  10
+logging_level = "INFO"
+
+checkpoint_path = "checkpoints"
+checkpoint_step = 5000

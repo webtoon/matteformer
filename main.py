@@ -116,8 +116,7 @@ if __name__ == '__main__':
     parser.add_argument('--local_rank', type=int, default=0)
 
     # Composition-1k
-    parser.add_argument('--config', type=str, default='config/MatteFormer_Composition1k.toml') # local
-    # parser.add_argument('--config', type=str, default='config/MatteFormer_Composition1k_titan.toml') # titan
+    parser.add_argument('--config', type=str, default='config/MatteFormer_Composition1k.toml')
 
     # Parse configuration
     args = parser.parse_args()

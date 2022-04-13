@@ -3,15 +3,11 @@
 ---
 
 This repository includes the official project of MatteFormer, presented in our paper:
-[MatteFormer: Transformer-Based Image Matting via Prior-Tokens](arxiv.org) [CVPR 22]
+[MatteFormer: Transformer-Based Image Matting via Prior-Tokens](https://arxiv.org/abs/2203.15662) [CVPR 22]
 
 ![Exp](assets/exp2.png)
 
-In this paper, we propose a transformer-based image matting model called MatteFormer, which takes full advantage of trimap information in the transformer block.
-Our method first introduces a prior-token which is a global representation of each trimap region (e.g. foreground, background, and unknown).
-These prior-tokens are used as global priors and participate in the self-attention mechanism of each block.
-Each stage of the encoder is composed of PAST (Prior-Attentive Swin Transformer) block, which is based on the Swin Transformer block, but differs in a couple of aspects:1) It has PA-WSA (Prior-Attentive Window Self-Attention) layer, performing self-attention not only with spatial-tokens but also with prior-tokens. 2) It has prior-memory which saves prior-tokens from the previous blocks and transfers them to the next block.
-We evaluate our MatteFormer on two commonly used image matting datasets: Composition-1k and Distinctions-646. Experiment results show that our proposed method achieves state-of-the-art performances with a large margin.
+In this paper, we propose a transformer-based image matting model called MatteFormer, which takes full advantage of trimap information in the transformer block. Our method first introduces a prior-token which is a global representation of each trimap region (e.g. foreground, background and unknown). These prior-tokens are used as global priors and participate in the self-attention mechanism of each block. Each stage of the encoder is composed of PAST (Prior-Attentive Swin Transformer) block, which is based on the Swin Transformer block, but differs in a couple of aspects: 1) It has PA-WSA (Prior-Attentive Window Self-Attention) layer, performing self-attention not only with spatial-tokens but also with prior-tokens. 2) It has prior-memory which saves prior-tokens accumulatively from the previous blocks and transfers them to the next block. We evaluate our MatteFormer on the commonly used image matting datasets: Composition-1k and Distinctions-646. Experiment results show that our proposed method achieves state-of-the-art performance with a large margin.
 
 ---
 
@@ -72,10 +68,10 @@ CUDA_VISIBLE_DEVICES=0,1 python3 -m torch.distributed.launch --nproc_per_node=2 
 ### Citation
 If you find this work or code useful for your research, please use the following BibTex entry:
 ```
-@article{abab,
-  title={abab,
-  author={abab},
-  journal={arXiv preprint arXiv:abab},
+@article{park2022matteformer,
+  title={MatteFormer: Transformer-Based Image Matting via Prior-Tokens},
+  author={Park, GyuTae and Son, SungJoon and Yoo, JaeYoung and Kim, SeHo and Kwak, Nojun},
+  journal={arXiv preprint arXiv:2203.15662},
   year={2022}
 }
 ```

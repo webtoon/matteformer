@@ -56,7 +56,7 @@ python3 evaluate.py
 ### Training on Composition-1k dataset
 1] You can get (imagenet pretrained) swin-transformer tiny model (**'swin_tiny_patch4_window7_224.pth'**) on [Swin Transformer](https://github.com/microsoft/Swin-Transformer).
 
-2] modify "config/MatteFormer_Composition1k_titan.toml"
+2] modify "config/MatteFormer_Composition1k.toml"
 
 3] run main.py
 ```

@@ -105,12 +105,12 @@ def generator_tensor_dict(image_path, trimap_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, default='config/MatteFormer_Composition1k.toml')
-    parser.add_argument('--checkpoint', type=str, default='pretrained/best_model.pth', help="path of checkpoint")
+    parser.add_argument('--checkpoint', type=str, default='/content/drive/MyDrive/best_model.pth', help="path of checkpoint")
 
     # local
-    parser.add_argument('--image-dir', type=str, default='Composition-1k-testset/merged/', help="input image dir")
-    parser.add_argument('--mask-dir', type=str, default='Composition-1k-testset/alpha_copy/', help="input trimap dir")
-    parser.add_argument('--trimap-dir', type=str, default='Composition-1k-testset/trimaps/', help="input trimap dir")
+    parser.add_argument('--image-dir', type=str, default='/content/matteformer/images', help="input image dir")
+    parser.add_argument('--mask-dir', type=str, default='/content/matteformer/trimaps', help="input trimap dir")
+    parser.add_argument('--trimap-dir', type=str, default='/content/matteformer/trimaps', help="input trimap dir")
 
     parser.add_argument('--output', type=str, default='predDIM/', help="output dir")
 

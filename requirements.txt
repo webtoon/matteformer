@@ -1,4 +1,6 @@
 torch
+torchvision
+timm
 numpy
 opencv-python
 toml
